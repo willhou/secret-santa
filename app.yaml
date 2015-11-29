@@ -1,0 +1,29 @@
+application: secret-santa-1130
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /images
+  static_dir: images
+
+- url: /styles
+  static_dir: styles
+
+- url: /join
+  script: join.app
+
+- url: /draw
+  script: draw.app
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
